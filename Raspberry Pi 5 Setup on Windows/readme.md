@@ -28,7 +28,7 @@ If your primary WiFi network changes or becomes unavailable, a mobile hotspot ca
 1. On your smartphone, go to **Settings** -> **Mobile Hotspot** (the location may vary depending on the OS).
 2. Turn on **Mobile Hotspot** and ensure the SSID and password match what you configured in the Raspberry Pi Imager settings.
 3. Make sure your computer is connected to the mobile hotspot.
-
+4. You must enter your hotspot name in SSID and Password in **Configure wireless LAN** in OS Customization Settings.
 
 ---
 ## Step 1: Install Raspberry Pi OS on the MicroSD Card
