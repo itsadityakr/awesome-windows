@@ -1,6 +1,6 @@
 # Raspberry Pi 5 Setup on Windows (Headless via WiFi)
 
-This guide walks you through setting up Raspberry Pi OS on a Raspberry Pi 5 using Raspberry Pi Imager, Angry IP Scanner, PuTTY, and VNC Viewer. This method allows configuration without the need for a monitor, keyboard, or mouse.
+This guide walks you through setting up Raspberry Pi OS on a Raspberry Pi 5 using Raspberry Pi Imager, Angry IP Scanner, PuTTY, and VNC Viewer. Additionally, it includes instructions for using a mobile hotspot as a fallback SSH connection, ensuring consistent access even if your WiFi changes.
 
 ## Prerequisites
 
@@ -10,7 +10,8 @@ This guide walks you through setting up Raspberry Pi OS on a Raspberry Pi 5 usin
 - MicroSD card reader
 - Power supply for Raspberry Pi 5
 - WiFi-enabled network
-
+- WiFi-enabled network (or mobile hotspot)
+- Smartphone (for creating a mobile hotspot)
 ### Software:
 1. [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
 2. [Angry IP Scanner](https://angryip.org/)
@@ -19,19 +20,42 @@ This guide walks you through setting up Raspberry Pi OS on a Raspberry Pi 5 usin
 
 ---
 
+## Note :- Set Up a Mobile Hotspot for SSH Access anywhere
+
+If your primary WiFi network changes or becomes unavailable, a mobile hotspot can be used to maintain access to your Raspberry Pi.
+
+### Create a Mobile Hotspot:
+1. On your smartphone, go to **Settings** -> **Mobile Hotspot** (the location may vary depending on the OS).
+2. Turn on **Mobile Hotspot** and ensure the SSID and password match what you configured in the Raspberry Pi Imager settings.
+3. Make sure your computer is connected to the mobile hotspot.
+
+
+---
 ## Step 1: Install Raspberry Pi OS on the MicroSD Card
 
-1. **Download and Install Raspberry Pi Imager:**
+You have two options to install Raspberry Pi OS on the microSD card: **Manual Installation** using a pre-downloaded image file, or **Automatic Installation** directly via Raspberry Pi Imager. It's recommended to download the image manually if your network is unstable, as automatic installation may fail due to poor connectivity.
+
+### Option 1: Manual Installation (Recommended for poor network connectivity)
+
+1. **Download Raspberry Pi OS:**
+   - Visit the [Raspberry Pi OS Downloads page](https://www.raspberrypi.com/software/operating-systems/) and download the **latest Raspberry Pi OS (64-bit)** version.
+   - Choose **Raspberry Pi OS with desktop and recommended software** for a complete setup:
+     - **System**: 64-bit
+     - **Debian version**: xx (Bookworm)
+     - **Size**: xxxx MB
+
+2. **Download and Install Raspberry Pi Imager:**
    - Go to [Raspberry Pi Imager](https://www.raspberrypi.com/software/) and download the appropriate version for your OS.
    - Install the Raspberry Pi Imager.
 
-2. **Write the Raspberry Pi OS Image:**
+3. **Write the Raspberry Pi OS Image:**
    - Open Raspberry Pi Imager.
-   - Click on **Choose OS** and select **Raspberry Pi OS (32-bit)** or any other preferred version.
+   - Click on **Choose OS** and select **Use Custom** at the bottom of the menu.
+   - Select the Raspberry Pi OS image you manually downloaded from the Raspberry Pi website.
    - Click on **Choose Storage** and select your microSD card.
+   - Click **Next**.
 
-3. **Configure Advanced Settings:**
-   - Click on the settings (gear icon) in the Raspberry Pi Imager (located at the bottom).
+4. **In OS Customization go to Edit Settings:**
    - In **General Settings**:
      - **Set Hostname**: Use a memorable name like `raspberrypi5.local`.
      - **Set Username and Password**: Keep it simple (e.g., `pi` as the username, and a password you can easily remember).
@@ -42,8 +66,41 @@ This guide walks you through setting up Raspberry Pi OS on a Raspberry Pi 5 usin
    - **Enable SSH**:
      - Check the box to enable SSH, and use the same password as the username for convenience.
    - Click **Save** to apply the settings.
-   
-4. **Write the Image**:
+   - Click **Yes** to apply OS Customization settings.
+
+5. **Write the Image**:
+   - Click **Write** to install the OS on the microSD card.
+   - Once the process completes, safely remove the microSD card from your computer.
+
+### Option 2: Automatic Installation via Raspberry Pi Imager (May cause errors with poor network)
+
+1. **Download and Install Raspberry Pi Imager:**
+   - Go to [Raspberry Pi Imager](https://www.raspberrypi.com/software/) and download the appropriate version for your OS.
+   - Install the Raspberry Pi Imager.
+
+2. **Choose the OS Image**:
+   - Open Raspberry Pi Imager.
+   - Click on **Choose OS** and select **Raspberry Pi OS with desktop and recommended software**.
+   - **Note**: This will automatically download the OS image. If your network connection is slow or unreliable, this process might fail, so consider using the manual download method instead.
+
+3. **Choose Storage**:
+   - Click on **Choose Storage** and select your microSD card.
+   - Click **Next**.
+
+4. **In OS Customization go to Edit Settings:**
+   - In **General Settings**:
+     - **Set Hostname**: Use a memorable name like `raspberrypi5.local`.
+     - **Set Username and Password**: Keep it simple (e.g., `pi` as the username, and a password you can easily remember).
+   - **Configure Wireless LAN**:
+     - Enter your WiFi SSID (network name) and password.
+   - **Local Settings**:
+     - Select your region, timezone, and keyboard layout.
+   - **Enable SSH**:
+     - Check the box to enable SSH, and use the same password as the username for convenience.
+   - Click **Save** to apply the settings.
+   - Click **Yes** to apply OS Customization settings.
+
+5. **Write the Image**:
    - Click **Write** to install the OS on the microSD card.
    - Once the process completes, safely remove the microSD card from your computer.
 
@@ -155,4 +212,3 @@ You have successfully set up a Raspberry Pi 5 on Windows using WiFi, SSH, and VN
 ---
 
 - by Aditya Kumar
-
