@@ -1,7 +1,3 @@
-Here's the updated README with the additional information about downloading the three batch files from the repository. 
-
----
-
 # 🌐 **Setting Up a Global Python Virtual Environment in Windows**
 
 This guide will help you create and manage a global Python virtual environment in your `C:\` directory using batch files for easy activation and package management.
@@ -120,6 +116,20 @@ pause
 
 ---
 
+## 💻 **Selecting the Python Interpreter in VS Code**
+
+After creating the virtual environment, you need to tell VS Code to use the correct Python interpreter for your environment. Follow these steps:
+
+1. Open VS Code.
+2. Press `Ctrl + Shift + P` to open the **Command Palette**.
+3. Type `Python: Select Interpreter` and press **Enter**.
+4. You will see a list of available Python interpreters. Choose the interpreter from `C:\global_env\Scripts\python.exe` to set your global environment as the default interpreter.
+5. Once selected, the interpreter will be activated for the current workspace.
+
+You can now run Python code in VS Code using your global virtual environment.
+
+---
+
 ## 📚 **Additional Resources**
 
 - [Python Virtual Environments Documentation](https://docs.python.org/3/tutorial/venv.html)  
@@ -139,5 +149,3 @@ You can download all three batch files from the repository.
 ---
 
 - by Aditya Kumar
-
----
