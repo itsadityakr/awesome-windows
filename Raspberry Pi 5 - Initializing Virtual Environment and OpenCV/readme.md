@@ -1,7 +1,3 @@
-Here’s an enhanced and detailed guide with **emojis** and **icons** for clarity and better engagement.
-
----
-
 # 🌟 Setting Up Virtual Environment and OpenCV on Raspberry Pi 5 🌟  
 
 This guide walks you through installing OpenCV on a Raspberry Pi 5, creating a virtual environment, and running Python files. It also explains how to deactivate the virtual environment when done.
