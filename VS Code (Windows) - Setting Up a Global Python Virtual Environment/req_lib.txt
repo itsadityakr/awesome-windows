@@ -1,0 +1,2 @@
+python.exe -m pip install --upgrade pip
+pip install flask pymongo openai flask_pymongo openai==0.28 python-dotenv pandas nltk matplotlib seaborn scikit-learn numpy tqdm opencv-python mediapipe keras Pillow tensorflow 
